@@ -25,18 +25,111 @@ html {
     font-size: calc(22px + 6 * (100vw - 1000px)/ 1000);
   }
 }
-
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+a {
+  color: #212121;
+  font-size: 14px;
+  text-decoration: none;
+}
 body {
-  font-family: sans-serif;
+  font-family: 'Source Code Pro','microsoft yahei',Lato,Helvetica,Arial,sans-serif;
   line-height: 1.5;
   -webkit-user-select: none;
   color: #33373d;
   fill: currentColor;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: none;
-  -webkit-touch-callout: none
+  -webkit-touch-callout: none;
+  margin: 0;
+  font-size: 16px;
+  background-color: #fff;
 }
 
 h1,h2,h3,h4,h5,h6{
   margin: 0;
+}
+header {
+  background-color: #c1c1c1;
+  color: #fff;
+  font-size: 25px;
+  min-height: 56px !important;
+  overflow: hidden;
+  a {
+    vertical-align: top;
+    font-size: 20px;
+    display: inline-block;
+    height: 56px;
+    line-height: 56px;
+    text-decoration: none;
+  }
+  .home {
+    font-size: 20px;
+  }
+  .upload-menu {
+    float: right;
+  }
+  .wrap {
+    padding: 0 15px;
+  }
+}
+footer {
+  border-top: 1px solid #ddd;
+  margin: 35px 15px;
+  padding: 15px;
+  text-align: center;
+  p {
+    margin: 0 0 10px;
+    a {
+      margin: 0 10px;
+    }
+  }
+}
+.ic{
+  font-family: "ic" !important;
+  font-size: 14px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #8f8f8f;
+}
+.wrapper{
+  max-width: 980px;
+  margin: 0 auto;
+  .list-header {
+    font-weight: bold;
+    padding: 20px 15px;
+  }
+  .list {
+    list-style: none;
+    padding: 0;
+    li {
+      position: relative;
+      a{
+        display: block;
+        padding: 15px;
+        .ic{
+          height: 20px;
+          margin-right: 7px;
+          width: 20px;
+          display: inline-block;
+          background-size: 16px 16px;
+          background-position: center center;
+          background-repeat: no-repeat;
+          vertical-align: top;
+        }
+      }
+      .file-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
 }
