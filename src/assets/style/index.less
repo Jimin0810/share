@@ -29,18 +29,21 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block;
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-a {
-  color: #212121;
-  font-size: 14px;
-  text-decoration: none;
+.clearfixed{
+  display: table;
+  content: " ";
 }
 body {
   font-family: 'Source Code Pro','microsoft yahei',Lato,Helvetica,Arial,sans-serif;
-  line-height: 1.5;
   -webkit-user-select: none;
   color: #33373d;
   fill: currentColor;
@@ -51,15 +54,32 @@ body {
   font-size: 16px;
   background-color: #fff;
 }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+a {
+  color: #212121;
+  text-decoration: none;
+}
+
+a:active{
+  color: #23527c;
+}
 
 h1,h2,h3,h4,h5,h6{
-  margin: 0;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+.text-right{
+  text-align: right;
 }
 header {
   background-color: #c1c1c1;
   color: #fff;
   font-size: 25px;
-  min-height: 56px !important;
+  min-height: 56px;
   overflow: hidden;
   a {
     vertical-align: top;
@@ -67,7 +87,6 @@ header {
     display: inline-block;
     height: 56px;
     line-height: 56px;
-    text-decoration: none;
   }
   .home {
     font-size: 20px;
@@ -92,11 +111,7 @@ footer {
   }
 }
 .ic{
-  font-family: "ic" !important;
   font-size: 14px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   color: #8f8f8f;
 }
 .wrapper{
@@ -114,6 +129,9 @@ footer {
       a{
         display: block;
         padding: 15px;
+        &:hover {
+          background-color: #eee;
+        }
         .ic{
           height: 20px;
           margin-right: 7px;

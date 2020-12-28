@@ -10,6 +10,7 @@ const pathResolve = (pathStr: string) => {
 const config: UserConfig = {
   // alias a path to a fs directory
   // the key must start and end with a slash
+  // @ts-ignore
   debug: true,
   alias: {
     '/@/': pathResolve('./src'),
