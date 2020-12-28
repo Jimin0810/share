@@ -43,8 +43,8 @@ export default defineComponent({
         <ul class="list">
           {files.map((i) => (
             <li onClick={() => handleClick(i.id + "")}>
-              <a class="row" href="javascript:void(0)" target="">
-                <div class="flex">
+              <a class="list-item" href="javascript:void(0)" target="">
+                <div class="clearfix">
                   <span class="file-name col-md-7 col-sm-6 col-xs-8">
                     <i class={{ ic: true, "ic-folder": true }}
                     ></i> {currentPath}
