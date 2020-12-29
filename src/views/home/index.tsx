@@ -36,7 +36,7 @@ export default defineComponent({
       <div class="home">
         <Header />
         <div class="wrap">
-          <div class="list-header">
+          <div class="list-header clearfix">
             <div class="col-md-7 col-sm-6 col-xs-8">文件名</div>
             <div class="col-md-2 col-sm-2 col-xs-4 text-right">大小</div>
             <div class="col-md-3 col-sm-4 hidden-xs text-right">修改时间</div>
