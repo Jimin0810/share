@@ -1,4 +1,4 @@
-const isType = (type: any) => (obj:any) => (Object.prototype.toString.call(obj) === `[object ${type}]`)
+const isType = (type: any) => (obj: any) => Object.prototype.toString.call(obj) === `[object ${type}]`
 const isArray = isType('Array')
 const isObject = isType('Object')
 const isString = isType('String')
@@ -6,76 +6,71 @@ const isDate = isType('Date')
 
 export const byte = (v: number): string => {
   if (v === undefined || v === null || isNaN(v)) {
-    return "-"
+    return '-'
   }
   let lo = 0
   while (v >= 1024) {
     v /= 1024
     lo++
   }
-  return Math.floor(v * 100) / 100 + " " +
-    ["B", "KB", "MB", "GB", "TB", "PB", "EB"][lo]
+  return Math.floor(v * 100) / 100 + ' ' + ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB'][lo]
 }
 export const datetime = (date: any, expr = 'iso') => {
   let a = new Date()
-  if(isDate(date)){
+  if (isDate(date)) {
     a = date
-  }
-  else if(isString(date)){
-    try{
-      a = new Date(date);
-    }catch(e){
-
-    }
+  } else if (isString(date)) {
+    try {
+      a = new Date(date)
+    } catch (e) {}
   }
 
-  var y = a.getFullYear(),
+  const y = a.getFullYear(),
     M = a.getMonth() + 1,
     d = a.getDate(),
     D = a.getDay(),
     h = a.getHours(),
     m = a.getMinutes(),
-    s = a.getSeconds();
+    s = a.getSeconds()
 
   function zeroize(v: any) {
-    v = parseInt(v);
-    return v < 10 ? "0" + v : v;
+    v = parseInt(v)
+    return v < 10 ? '0' + v : v
   }
 
-  if(expr === 'iso'){
+  if (expr === 'iso') {
     return a.toISOString()
   }
-  return expr.replace(/(?:s{1,2}|m{1,2}|h{1,2}|d{1,2}|M{1,4}|y{1,4})/g, function(str) {
-
+  return expr.replace(/(?:s{1,2}|m{1,2}|h{1,2}|d{1,2}|M{1,4}|y{1,4})/g, function (str) {
     switch (str) {
       case 's':
-        return s;
+        return s
       case 'ss':
-        return zeroize(s);
+        return zeroize(s)
       case 'm':
-        return m;
+        return m
       case 'mm':
-        return zeroize(m);
+        return zeroize(m)
       case 'h':
-        return h;
+        return h
       case 'hh':
-        return zeroize(h);
+        return zeroize(h)
       case 'd':
-        return d;
+        return d
       case 'dd':
-        return zeroize(d);
+        return zeroize(d)
       case 'M':
-        return M;
+        return M
       case 'MM':
-        return zeroize(M);
+        return zeroize(M)
       case 'MMMM':
-        return ['十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一'][m] + '月';
+        return ['十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一'][m] + '月'
       case 'yy':
-        return String(y).substr(2);
+        return String(y).substr(2)
       case 'yyyy':
-        return y;
+        return y
       default:
-        return str.substr(1, str.length - 2);
+        return str.substr(1, str.length - 2)
     }
-  });
+  })
 }

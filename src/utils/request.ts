@@ -48,6 +48,7 @@ service.interceptors.response.use(
   },
 )
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
 const log = (content: string, type = 'error') => {}
 
 const urlReplace = (url: string, params: any): string =>
